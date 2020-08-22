@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+  <header>
+    <h1>ChatApp</h1>
+    <a href="index.html"><button class="leave">Leave</button></a>
+  </header>
+  <main>
+    <div class="chat-container">
+      <div class="chat-sidebar">
+        <h3>Room Name:</h3>
+        <h2 class="room-name"></h2>
+        <ul class="chat-users">
+        </ul>
+      </div>
+      <div class="chat-messages">
+        <div class="message">
+          <p class="meta">Bibhor<span>11:23am</span></p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ad earum ipsa impedit reiciendis nisi porro numquam perferendis.
+          </p>
+        </div>
+        <div>
+          <form id="chat-form" action="">
+            <input id="msg" type="text" placeholder="Enter message" required autocomplete="off">
+            <button>Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>
+</html>

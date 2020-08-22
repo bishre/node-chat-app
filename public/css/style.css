@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+	--dark-color-a: #667aff;
+	--dark-color-b: #7386ff;
+	--light-color: #e6e9ff;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+header {
+  background: var(--dark-color-a);
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 50px;
+}
+
+main {
+  padding: 8px;
+}
+
+.form-container {
+  padding: 16px;
+  background: var(--dark-color-b);
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-container input, .form-container select {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  margin: 4px 0 24px 0;
+}
+
+.enter {
+  width: 100%;
+  padding: 8px;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.leave {
+  padding: 8px 16px;
+  background: var(--light-color);
+  color: var(--dark-color-a);
+  border: none;
+}
+
+.chat-container {
+  color: black;
+  display: flex;
+}
+
+.sidebar {
+  width: 30%;
+}
+
+.message {
+  background: var(--light-color);
+  margin: 12px 16px;
+}
+
+.chat-messages {
+  width: 70%;
+  height: 50vh;
+  overflow: scroll;
+}
