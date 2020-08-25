@@ -18,9 +18,8 @@ socket.on('roomUsers', ({ room, users }) => {
 })
 
 socket.on('message', message => {
-  console.log(message)
-  chatMessages.scrollTop = chatMessages.scrollHeight
   outputMessage(message)
+  chatMessages.scrollTop = chatMessages.scrollHeight
   }
 )
 
@@ -36,8 +35,8 @@ const outputMessage = (msg) => {
   const div = document.createElement("div")
   div.classList.add("message")
   div.innerHTML = `
-    <p class="meta">${msg.username} <span>${msg.time}</span></p>
-    <p class="text">${msg.message}</p>
+    <p class="chat-meta">${msg.username} <span class="chat-meta__span">${msg.time}</span></p>
+    <p class="chat-text">${msg.message}</p>
   `
   chatMessages.appendChild(div)
 }
@@ -52,4 +51,17 @@ function outputUsers(users) {
   userList.innerHTML = `
     ${users.map(user => `<li>${user.username}</li>`).join('')}
   `
+}
+
+function handleClick() {
+  const sidebar = document.querySelector(".chat-sidebar")
+  const toggleText = document.querySelector(".chat-toggle__text")
+  if (sidebar.style.display === "") {
+    sidebar.style.display = "block"
+    toggleText.innerText = "close"
+  } else {
+    sidebar.style.display = ""
+    toggleText.innerText = "users"
+  }
+  
 }

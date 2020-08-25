@@ -21,15 +21,11 @@ body {
 }
 
 header {
+  position: relative;
   background: var(--dark-color-a);
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  margin-bottom: 50px;
-}
-
-main {
-  padding: 8px;
 }
 
 .form-container {
@@ -64,9 +60,42 @@ a {
   border: none;
 }
 
+.sidebar-toggler {
+  vertical-align: middle;
+  color: white;
+  z-index: 10;
+}
+
 .chat-container {
   color: black;
   display: flex;
+}
+
+.chat-sidebar {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin-top: 50px;
+  padding-top: 50px;
+  background: var(--dark-color-b);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.chat-room {
+  padding: 8px;
+}
+
+.chat-users__title {
+  padding: 8px;
+}
+
+.room-name {
+  margin-bottom: 20px;
 }
 
 .sidebar {
@@ -74,12 +103,83 @@ a {
 }
 
 .message {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.chat-meta, .chat-text {
   background: var(--light-color);
-  margin: 12px 16px;
+}
+
+.chat-meta {
+  width: 18%;
+  height: 50%;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 10px 10px 0 10px;
+}
+
+.chat-meta__span {
+  font-size: 8px;
+}
+
+.chat-text {
+  width: 80%;
+  padding: 12px;
+  margin-top: 42px;
+  border-radius: 0px 10px 10px 10px;
 }
 
 .chat-messages {
-  width: 70%;
-  height: 50vh;
+  width: 100%;
   overflow: scroll;
+  padding: 16px;
+  padding-bottom: 50px;
+}
+
+.chat-messages-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 16px;
+  background: var(--dark-color-a);
+}
+
+.chat-input {
+  padding: 8px;
+  width: 82%;
+}
+
+.chat-send {
+  padding: 8px 16px;
+  background: var(--light-color);
+  color: var(--dark-color-a);
+  border: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .chat-container {
+    display: flex;
+  }
+  .chat-sidebar {
+    display: block;
+    width: 30%;
+    position: relative;
+    height: 100vh;
+    margin-top: 0;
+  }
+
+  .chat-messages {
+    width: 70%;
+  }
+
+  .sidebar-toggler {
+    display: none;
+  }
+
+  .chat-messages-form {
+    z-index: 10;
+  }
 }
