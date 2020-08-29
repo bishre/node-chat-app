@@ -133,7 +133,8 @@ a {
 
 .chat-messages {
   width: 100%;
-  overflow: scroll;
+  max-height: 600px;
+  overflow-y: scroll;
   padding: 16px;
   padding-bottom: 50px;
 }
